@@ -1,6 +1,6 @@
-# nyt-react-search
+# googleBooks-react-search
 
-## A Dynamic way to search for New York Times Articles
+## A Dynamic way to search for Google Books
 Features live updating search results on the React framework.
 Search for your favorite books and save them for later readings!
 
