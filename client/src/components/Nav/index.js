@@ -7,11 +7,10 @@ function Nav() {
 	const [width, setWidth] = useState(window.innerWidth);
 
 	const updateWidth = () => {
-		const newState = { [width]: window.innerWidth };
-		if (open && newState.width > 991) {
-			newState.open = false;
+		if (open && width > 991) {
+			width.open = false;
 		}
-		setWidth(newState);
+		setWidth(width);
 	};
 
 	const toggleNav = () => {
@@ -20,7 +19,7 @@ function Nav() {
 
 	useEffect(() => {
 		window.removeEventListener("resize", updateWidth);
-	}, [updateWidth]);
+	});
 
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
