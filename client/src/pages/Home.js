@@ -18,13 +18,15 @@ function Home() {
 		setQuery(value);
 	};
 
-	const getBooks = () => {
-		API.getBooks(query)
-			.then(res => setBooks(res.data))
-			.catch(() => {
-				setBooks([]);
-				setMessage("No New Books Found, Try a Different Query");
-			});
+	const getBooks = async () => {
+		try {
+			const response = await API.getBooks(query);
+			setBooks(response.data);
+		} catch (error) {
+			setBooks([]);
+			setMessage("No New Books Found, Try a Different Query");
+			throw new Error(error);
+		}
 	};
 
 	const handleFormSubmit = event => {
@@ -32,10 +34,9 @@ function Home() {
 		getBooks();
 	};
 
-	const handleBookSave = id => {
+	const handleBookSave = async id => {
 		const book = books.find(book => book.id === id);
-
-		API.saveBook({
+		const bookData = await API.saveBook({
 			googleId: book.id,
 			title: book.volumeInfo.title,
 			subtitle: book.volumeInfo.subtitle,
@@ -43,7 +44,8 @@ function Home() {
 			authors: book.volumeInfo.authors,
 			description: book.volumeInfo.description,
 			image: book.volumeInfo.imageLinks.thumbnail
-		}).then(() => getBooks());
+		});
+		return getBooks(bookData);
 	};
 
 	return (
