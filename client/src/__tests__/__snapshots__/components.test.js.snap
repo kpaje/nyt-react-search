@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Render Card component correctly Matches the snapshot 1`] = `
+<div
+  className="card mt-4"
+>
+  <div
+    className="card-header"
+  >
+    <h3>
+      <strong>
+        <i
+          aria-hidden="true"
+          className="fa fa-undefined"
+        />
+         
+      </strong>
+    </h3>
+  </div>
+  <div
+    className="card-body"
+  />
+</div>
+`;
+
 exports[`Render Footer component correctly Matches the snapshot 1`] = `
 <footer>
   <hr />
@@ -12,6 +35,40 @@ exports[`Render Footer component correctly Matches the snapshot 1`] = `
      Kelvin Paje
   </p>
 </footer>
+`;
+
+exports[`Render Form component correctly Matches the snapshot 1`] = `
+<form>
+  <div
+    className="form-group"
+  >
+    <label
+      htmlFor="Query"
+    >
+      <strong>
+        Book
+      </strong>
+    </label>
+    <input
+      className="form-control"
+      id="Title"
+      name="query"
+      placeholder="Ready Player One"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="pull-right"
+  >
+    <button
+      className="btn btn-lg btn-danger float-right"
+      type="submit"
+    >
+      Search
+    </button>
+  </div>
+</form>
 `;
 
 exports[`Render Jumbotron component correctly Matches the snapshot 1`] = `
