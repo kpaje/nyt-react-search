@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Footer component correctly Matches the snapshot 1`] = `
+<footer>
+  <hr />
+  <p
+    className="pull-right"
+  >
+    <i
+      className="fab fa-github"
+    />
+     Kelvin Paje
+  </p>
+</footer>
+`;
+
+exports[`Render Jumbotron component correctly Matches the snapshot 1`] = `
+<div
+  className="jumbotron mt-4"
+/>
+`;
